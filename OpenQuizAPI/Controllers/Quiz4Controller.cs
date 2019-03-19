@@ -28,7 +28,7 @@ namespace Step.Controllers
         [HttpGet]
         public ActionResult<List<int>> GetQuizList()
         {
-            return pullIntList("SELECT QuizId FROM Quiz4;");
+            return this.pullIntList("SELECT QuizId FROM Quiz4;");
         }
 
         [Route("[action]")]
@@ -122,7 +122,7 @@ namespace Step.Controllers
         [HttpGet("Genre")]
         public ActionResult<List<String>> getGenreList()
         {
-            return pullStringList("SELECT DISTINCT Genre FROM Quiz4;");
+            return this.pullStringList("SELECT DISTINCT Genre FROM Quiz4;");
         }
 
         [HttpGet("Genre/{Genre}")]
@@ -147,7 +147,7 @@ namespace Step.Controllers
         [HttpGet("Presenter")]
         public ActionResult<List<String>> getPresenterList()
         {
-            return pullStringList("SELECT DISTINCT Presenter FROM Quiz4;");
+            return this.pullStringList("SELECT DISTINCT Presenter FROM Quiz4;");
         }
 
         [HttpGet("Presenter/{Presenter}")]//ここ本当はidまでをget、Answerをpostでとりたかった
@@ -167,13 +167,13 @@ namespace Step.Controllers
             return result;
         }
         [HttpPost("CustomList")]
-        public ActionResult<List<Quiz4>> getCustomList(CustomPair postData)//ここでこう値をとれないことを知りました！
+        public ActionResult<List<Quiz4>> getCustomList(CustomPair postData)
         {
             if (postData == null)
             {
                 return BadRequest();
             }
-            var result = pullCustomList(postData.type, postData.var);
+            var result = this.pullCustomList(postData.type, postData.var);
             if (result == null)
             {
                 return NotFound();
@@ -181,11 +181,10 @@ namespace Step.Controllers
 
             return result;
         }
-        [HttpPost]
         [HttpPost("CustomOne")]
         public ActionResult<Quiz4> getCustomOne(CustomPair postData)
         {
-            var result = pullCustomList(postData.type, postData.var);
+            var result = this.pullCustomList(postData.type, postData.var);
             if (result == null)
             {
                 return NotFound();

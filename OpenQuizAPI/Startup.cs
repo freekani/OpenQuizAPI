@@ -6,9 +6,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OpenQuizAPI.Models.Core;
 
-//すでに含まれているから含めなくて良い。
-//using Microsoft.EntityFrameworkCore;
-
 namespace OpenQuizAPI
 {
     public class Startup

@@ -12,7 +12,8 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "APPSETTING_DBCONNECTION": "server=localhost; port=3306; database=step; userid=user; password=user;"
       }
     },
     "OpenQuizAPI": {
