@@ -42,7 +42,7 @@ namespace OpenQuizAPI
             //    options.UseMySql(Configuration.GetConnectionString("MySQL")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             var config = new AppConfiguration();
-            config.ConnectionString = Configuration.GetValue<string>("APPSETTING_DBCONNECTION");
+            config.ConnectionString = Configuration.GetValue<string>("MYSQLCONNSTR_APPSETTING_DBCONNECTION");
             services.AddSingleton(config);
         }
 

@@ -18,7 +18,7 @@ namespace Step.Controllers
     {
 
         [HttpGet("[action]")]
-        public ActionResult<CustomPair> getCustomPairFormat()
+        public ActionResult<CustomPair> GetCustomPairFormat()
         {
             return new CustomPair() { type = "type", var = "var" };
         }
