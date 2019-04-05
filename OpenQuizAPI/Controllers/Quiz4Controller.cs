@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 
 
 
-namespace Step.Controllers
+namespace OpenQuizAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
