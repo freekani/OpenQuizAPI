@@ -54,5 +54,10 @@ namespace OpenQuiz4Client4Win
                 this.mainTable.ItemsSource = quizlist;
             }
         }
+
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -12,7 +12,22 @@
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="mainTable" Grid.ColumnSpan="3" Margin="0,0,0,84"/>
-        <Button Content="クイズリストを取得" Margin="333,0,332,34" Click="Button_Click" Grid.Column="2" Height="29" VerticalAlignment="Bottom"/>
+        <TabControl Grid.ColumnSpan="3">
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="クイズ取得" Height="22" VerticalAlignment="Top">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="mainTable" Margin="0,0,0,57"/>
+                    <Button Content="クイズリストを取得" Margin="330,436,330,10" Click="Button_Click"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
