@@ -101,7 +101,12 @@ namespace OpenQuizAPI.Controllers
         [HttpGet("{QuizId}")]
         public ActionResult<Quiz4> GetQuiz(long QuizId)
         {
-            return this.pullQuiz(QuizId);
+            var nullcheck = this.pullQuiz(QuizId);
+            if (nullcheck == null)
+            {
+                return NotFound();
+            }
+            return nullcheck;
         }
 
         [HttpGet("{QuizId}/{Answer}")]
